@@ -154,5 +154,45 @@ You can play with the code here: https://ideone.com/oZZybw
 
 ## Template classes
 
+Template classes are as well used to avoid code duplication, but also you can have some so called metaprograms created with them.
+Simple template class and it's usage look like this:
+
+```
+#include <iostream>
+using namespace std;
+
+template <typename T>
+class SomeClass
+{
+public:
+    T getValue() { return value; }
+private:
+    T value;
+};
+
+int main() {
+	SomeClass<int> sc;
+	std::cout << sc.getValue() << std::endl;
+	return 0;
+}
+```
+
+Template classes are heavily used in STL. For example std::vector, std::list and every other container is a template class and if you want to use them you do it like here:
+
+```
+std::vector<int> v = {1, 2, 3};
+std::list<char> l{'c', 'd', 'b'};
+```
+### Exercise
+Write a template class which create an _overengineered_ `std::map` :) It should hold 2 std::vectors inside with the same size, each with different types. Usage should look like this
+```
+VectorMap<int, char> map;
+map.insert(1, 'c');
+map[1] = 'e';  // replaces value under 1
+std::cout << map[1];  // prints 'e'
+map.at(2); // throw std::out_of_range
+```
+First vector should hold keys, the other one values. Elements at the same position in both vectors should create a pair like 1 and 'c' above.
+Try to implement as much of `std::map` interface as possible, at least the mentioned above `insert`, `operator[]`, `at` - http://en.cppreference.com/w/cpp/container/map
 
 ## Advanced topic: Variadic Templates
