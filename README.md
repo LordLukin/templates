@@ -32,7 +32,7 @@ std::complex<int> add(std::complex<int> first, std::complex<int> second)
 }
 ```
 
-You can see that here we already used templates. std::complex is a template class, but now we are talking about template functions, so let me introduce template classes later.
+You can see that here we already used templates. `std::complex` is a template class, but now we are talking about template functions, so let me introduce template classes later.
 You can easily see that we have a code duplication here. Instead of writing so many functions we can have only one - template function:
 
 ```
@@ -43,7 +43,7 @@ Type add(Type first, Type second)
 }
 ```
 
-Instead of Type you can have any name as you wish, typically you'll see just T as a typename, but it's better to have a longer name than only one character, especially when where are more than only one template types.
+Instead of `Type` you can have any name as you wish, typically you'll see just `T` as a typename, but it's better to have a longer name than only one character, especially when where are more than only one template types.
 If you want not to use this functions you can do it like this:
 
 ```
@@ -94,7 +94,7 @@ Now the code should work:
 auto resultC = add(4, 5.0);  // resultC type is int
 ```
 
-The output type is the same as first argument type, because it was defined in template function above as TypeA.
+The output type is the same as first argument type, because it was defined in template function above as `TypeA`.
 Generally you can freely use template types inside functions, for example you can create new variables of provided types:
 
 ```
@@ -108,7 +108,7 @@ void doNothing()
 }
 ```
 
-You can use typeid().name() to print variable type. You need to include typeinfo header for this. You can also see that instead of typename keyword class keyword can be used. They are interchangable.
+You can use `typeid().name()` to print variable type. You need to include `typeinfo` header for this. You can also see that instead of `typename` keyword, `class` keyword can be used. They are interchangable.
 In this case if you want to use doNothing function without providing explicit templates parameters, the code will not compile:
 
 ```
