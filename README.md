@@ -72,8 +72,9 @@ or like above
 auto resultC = add<std::complex<int>>({1, 2}, {2, 3);
 ```
 
+
 ---
-`**Exercise**`
+### Exercise
 
 Write a function which create `std::complex` number from two provided numbers. If the types of numbers are different, it should created `std::complex` of the first parameter. Usage:
 ```
@@ -82,6 +83,7 @@ std::complex<double> b = makeComplex(3.0, 2.0);
 std::complex<int> c = makeComplex(1, 5.0);
 ```
 ---
+
 
 The compiler itself deduce which template function parameters should be use. However if you write the code like this:
 
@@ -195,8 +197,9 @@ std::vector<int> v = {1, 2, 3};
 std::list<char> l{'c', 'd', 'b'};
 ```
 
+
 ---
-`**Exercise**`
+### Exercise
 
 Write a template class which create an _overengineered_ `std::map` :) It should hold 2 std::vectors inside with the same size, each with different types. Usage should look like this
 ```
@@ -209,6 +212,7 @@ map.at(2); // throw std::out_of_range
 First vector should hold keys, the other one values. Elements at the same position in both vectors should create a pair like 1 and 'c' above. Try to implement as much of `std::map` interface as possible, at least the mentioned above `insert`, `operator[]`, `at` - http://en.cppreference.com/w/cpp/container/map
 
 ---
+
 
 ## Partial specialization
 
