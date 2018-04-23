@@ -74,7 +74,7 @@ auto resultC = add<std::complex<int>>({1, 2}, {2, 3);
 
 
 ---
-### Exercise
+### Exercise 1
 
 Write a function which create `std::complex` number from two provided numbers. If the types of numbers are different, it should created `std::complex` of the first parameter. Usage:
 ```
@@ -199,7 +199,7 @@ std::list<char> l{'c', 'd', 'b'};
 
 
 ---
-### Exercise
+### Exercise 2
 
 Write a template class which create an _overengineered_ `std::map` :) It should hold 2 std::vectors inside with the same size, each with different types. Usage should look like this
 ```
@@ -269,9 +269,11 @@ int main() {
 Interactive version: https://ideone.com/GaTh0B
 
 ---
-### Exercise
+### Exercise 3
+
 Write a template class IsSmallPrime which holds boolean value true or false, depending on the integer value passed into template parameter. You should use specialization for values 2, 3, 5 and 7. In case of 0, 1, 4, 6, 8 and 9 it should hold false value.
-Hint: Beside of normal typename or class parameter, tmplates can also have int parameters: `template <typename T, int N> class C {}`
+Hint: Beside of typename or class parameter, templates can also have int parameters: `template <typename T1, class T2, int N> class C {}`
+
 ---
 
 ## Partial specialization
