@@ -52,7 +52,7 @@ auto resultD = add<double>(4.0, 5.0); // resultD type is double
 auto resultC = add<std::complex<int>>({1, 2}, {2, 3);  // resultC type is std::complex<int>
 ```
 
-You can play with the code here: https://ideone.com/NU0L8k
+You can play with the code here: https://ideone.com/fork/NU0L8k
 
 But in C++ there is something called function template types deduction. It means that you can skip this part with angled braces <> and write it like here:
 
@@ -162,7 +162,7 @@ int main() {
 }
 ```
 
-You can play with the code here: https://ideone.com/oZZybw
+You can play with the code here: https://ideone.com/fork/oZZybw
 
 
 ## Template classes
@@ -241,7 +241,7 @@ int main() {
 }
 ```
 
-You can play with the code here: https://ideone.com/LEIx7e
+You can play with the code here: https://ideone.com/fork/LEIx7e
 In general this concept of specialization is heavily used in [type_traits library](http://en.cppreference.com/w/cpp/header/type_traits). Please take a look there.
 Generaly, we can have different behavior of the code, depending on the type that we provided. Of course we could write normal stuctures or functions above, but this solution with templates is generic, which means that for every type that we provide to is_int by default value false will be returned. 
 
@@ -266,7 +266,7 @@ int main() {
 }
 ```
 
-Interactive version: https://ideone.com/GaTh0B
+Interactive version: https://ideone.com/fork/GaTh0B
 
 ---
 ### Exercise 3
