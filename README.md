@@ -73,7 +73,8 @@ auto resultC = add<std::complex<int>>({1, 2}, {2, 3);
 ```
 
 ---
-**Exercise**
+`**Exercise**`
+
 Write a function which create `std::complex` number from two provided numbers. If the types of numbers are different, it should created `std::complex` of the first parameter. Usage:
 ```
 std::complex<int> a = makeComplex(4, 5);
@@ -195,7 +196,8 @@ std::list<char> l{'c', 'd', 'b'};
 ```
 
 ---
-**Exercise**
+`**Exercise**`
+
 Write a template class which create an _overengineered_ `std::map` :) It should hold 2 std::vectors inside with the same size, each with different types. Usage should look like this
 ```
 VectorMap<int, char> map;
@@ -207,5 +209,7 @@ map.at(2); // throw std::out_of_range
 First vector should hold keys, the other one values. Elements at the same position in both vectors should create a pair like 1 and 'c' above. Try to implement as much of `std::map` interface as possible, at least the mentioned above `insert`, `operator[]`, `at` - http://en.cppreference.com/w/cpp/container/map
 
 ---
+
+## Partial specialization
 
 ## Advanced topic: Variadic Templates
