@@ -213,6 +213,66 @@ First vector should hold keys, the other one values. Elements at the same positi
 
 ---
 
+## Specialization
+
+You can also specialize templates. Here is an example. We have a class is_int with boolean field value, which is by default initialized with false. However, if we provide an int as a parameter type, we want to have a true value there. This is how to achieve it:
+
+```
+#include <iostream>
+using namespace std;
+
+template<typename T>   // primary template
+struct is_int
+{
+    static const bool value = false;
+};
+
+template<>  // explicit specialization for T = int
+struct is_int<int>
+{
+    static const bool value = true;
+};
+
+
+int main() {
+    std::cout << is_int<char>::value << std::endl;  // prints 0 (false)
+    std::cout << is_int<int>::value << std::endl;   // prints 1 (true)
+    return 0;
+}
+```
+
+You can play with the code here: https://ideone.com/LEIx7e
+In general this concept of specialization is heavily used in [type_traits library](http://en.cppreference.com/w/cpp/header/type_traits). Please take a look there.
+Generaly, we can have different behavior of the code, depending on the type that we provided. Of course we could write normal stuctures or functions above, but this solution with templates is generic, which means that for every type that we provide to is_int by default value false will be returned. 
+
+To achieve above behavior, usually already defined std::false_type and std::true_type values are used. This is equivalent code to above one, with std::false_type and std::true_type used.
+
+```
+#include <iostream>
+using namespace std;
+
+template<typename T>   // primary template
+struct is_int : std::false_type
+{};
+
+template<>  // explicit specialization for T = int
+struct is_int<int> : std::true_type
+{};
+
+int main() {
+    std::cout << is_int<char>::value << std::endl;  // prints 0 (false)
+    std::cout << is_int<int>::value << std::endl;   // prints 1 (true)
+    return 0;
+}
+```
+
+Interactive version: https://ideone.com/GaTh0B
+
+---
+### Exercise
+Write a template class IsSmallPrime which holds boolean value true or false, depending on the integer value passed into template parameter. You should use specialization for values 2, 3, 5 and 7. In case of 0, 1, 4, 6, 8 and 9 it should hold false value.
+Hint: Beside of normal typename or class parameter, tmplates can also have int parameters: `template <typename T, int N> class C {}`
+---
 
 ## Partial specialization
 
