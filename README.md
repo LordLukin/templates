@@ -275,7 +275,3 @@ Write a template class IsSmallPrime which holds boolean value true or false, dep
 Hint: Beside of typename or class parameter, templates can also have int parameters: `template <typename T1, class T2, int N> class C {}`
 
 ---
-
-## Partial specialization
-
-## Advanced topic: Variadic Templates
